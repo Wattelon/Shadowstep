@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float minWalkableDistance;
     [SerializeField] private float maxWalkableDistance;
+    [SerializeField] private float levelBounds;
 
     [SerializeField] private float reachedPointDistance;
 
@@ -88,7 +89,17 @@ public class EnemyAI : MonoBehaviour
     
     private Vector3 GenerateRoamPosition()
     {
-        var roamPosition = gameObject.transform.position + GenerateRandomDirection() * GenerateRandomWalkableDistance();
+        var roamVector = GenerateRandomDirection() * GenerateRandomWalkableDistance();
+        var roamPosition = gameObject.transform.position + roamVector;
+        if (Mathf.Abs(roamPosition.x) > levelBounds)
+        {
+            roamVector.x *= -1;
+        }
+        if (Mathf.Abs(roamPosition.z) > levelBounds)
+        {
+            roamVector.z *= -1;
+        }
+        roamPosition = gameObject.transform.position + roamVector;
         return roamPosition;
     }
 
@@ -100,7 +111,7 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 GenerateRandomDirection()
     {
-        var newDirection = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        var newDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         return newDirection.normalized;
     }
 }
