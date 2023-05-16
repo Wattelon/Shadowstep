@@ -3,19 +3,12 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private float attackRange;
-    [SerializeField] private int damage;
     [SerializeField] private float cooldown;
 
-    private Player _player;
     private float _timer;
     public bool CanAttack { get; private set; }
 
     public float AttackRange => attackRange;
-
-    private void Start()
-    {
-        _player = FindObjectOfType<Player>();
-    }
 
     private void Update()
     {
@@ -33,7 +26,6 @@ public class EnemyAttack : MonoBehaviour
 
     public void TryAttackPlayer()
     {
-        _player.TakeDamage(damage);
         CanAttack = false;
     }
 }

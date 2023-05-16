@@ -6,7 +6,6 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float minWalkableDistance;
     [SerializeField] private float maxWalkableDistance;
-    [SerializeField] private float levelBounds;
 
     [SerializeField] private float reachedPointDistance;
 
@@ -23,9 +22,12 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private AIPath aiPath;
 
+    [SerializeField] private Damage damage;
+
     private Player _player;
 
     private EnemyStates _currentState;
+    private HealthStates _health;
     private Vector3 _roamPosition;
 
     private void Start()
@@ -45,13 +47,12 @@ public class EnemyAI : MonoBehaviour
                 enemyAnimator.IsWalking(true);
                 enemyAnimator.IsRunning(false);
                 aiPath.maxSpeed = 2;
-                _roamPosition = new Vector3(_roamPosition.x, transform.position.y, _roamPosition.z);
                 roamTarget.transform.position = _roamPosition;
+                aiDestinationSetter.target = roamTarget.transform;
                 if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
                 {
                     _roamPosition = GenerateRoamPosition();
                 }
-                aiDestinationSetter.target = roamTarget.transform;
                 TryFindPlayer();
                 
                 break;
@@ -89,17 +90,8 @@ public class EnemyAI : MonoBehaviour
     
     private Vector3 GenerateRoamPosition()
     {
-        var roamVector = GenerateRandomDirection() * GenerateRandomWalkableDistance();
-        var roamPosition = gameObject.transform.position + roamVector;
-        if (Mathf.Abs(roamPosition.x) > levelBounds)
-        {
-            roamVector.x *= -1;
-        }
-        if (Mathf.Abs(roamPosition.z) > levelBounds)
-        {
-            roamVector.z *= -1;
-        }
-        roamPosition = gameObject.transform.position + roamVector;
+        var roamPosition = gameObject.transform.position + GenerateRandomDirection() * GenerateRandomWalkableDistance();
+        roamPosition = AstarPath.active.GetNearest(roamPosition).position;
         return roamPosition;
     }
 
@@ -111,13 +103,22 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 GenerateRandomDirection()
     {
-        var newDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        var newDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), Random.Range(-1f, 1f));
         return newDirection.normalized;
     }
-}
-
-public enum EnemyStates
-{
-    Roaming,
-    Following
+    
+    public void Hit(bool isCritical)
+    {
+        _health = damage.TakeDamage(isCritical);
+        if (_health == HealthStates.Dead)
+        {
+            Debug.Log("Enemy dead");
+            aiPath.enabled = false;
+            GetComponent<Animator>().enabled = false;
+        }
+        else if (_health == HealthStates.Injured)
+        {
+            Debug.Log("Enemy injured");
+        }
+    }
 }

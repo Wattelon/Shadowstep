@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] private Damage damage;
 
-    public void TakeDamage(int damage)
+    private HealthStates _health;
+    
+    public void Hit(bool isCritical)
     {
-        if (health - damage <= 0)
+        _health = damage.TakeDamage(isCritical);
+        if (_health == HealthStates.Dead)
         {
-            health = 0;
-            Debug.Log("Died");
-            return;
+            Time.timeScale = 0f;
+            Debug.Log("You are dead");
         }
-
-        health -= damage;
+        else if (_health == HealthStates.Injured)
+        {
+            Debug.Log("You are injured");
+        }
     }
 }

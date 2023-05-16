@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAnimator : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator animator;
 
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Run = Animator.StringToHash("IsRunning");
@@ -10,16 +10,16 @@ public class EnemyAnimator : MonoBehaviour
 
     public void PlayAttack()
     {
-        _animator.SetTrigger(Attack);
+        animator.SetTrigger(Attack);
     }
 
     public void IsRunning(bool condition)
     {
-        _animator.SetBool(Run, condition);
+        animator.SetBool(Run, condition);
     }
     
     public void IsWalking(bool condition)
     {
-        _animator.SetBool(Walk, condition);
+        animator.SetBool(Walk, condition);
     }
 }
