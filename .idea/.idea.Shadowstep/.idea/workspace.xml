@@ -5,54 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89ae8734-36b9-4125-8302-e08b952d5866" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Building.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Building.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Ladder.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Ladder.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Player.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Player.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Pond.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Pond.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Tree.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Tree.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Materials/01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Materials/01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Character_Enemy.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Character_Enemy.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Boot_Diff.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Boot_Diff.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Char_Diff.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Char_Diff.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Helmet_Diff.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Helmet_Diff.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Shoulder_Diff.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Shoulder_Diff.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Undergarment_Diffuse.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Undergarment_Diffuse.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Vambrace_Diffuse.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Vambrace_Diffuse.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Vest_Diff.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medieval Guard/Source/Materials/Vest_Diff.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +134,8 @@
       <workItem from="1684150606209" duration="4915000" />
       <workItem from="1684176020191" duration="2000" />
       <workItem from="1684177430638" duration="1926000" />
-      <workItem from="1684244843584" duration="16774000" />
+      <workItem from="1684244843584" duration="16840000" />
+      <workItem from="1684331218032" duration="2776000" />
     </task>
     <servers />
   </component>

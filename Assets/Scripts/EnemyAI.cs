@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private AIPath aiPath;
 
     [SerializeField] private Damage damage;
+    [SerializeField] private Weapon weapon;
 
     private Player _player;
 
@@ -115,6 +116,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Enemy dead");
             aiPath.enabled = false;
             GetComponent<Animator>().enabled = false;
+            weapon.EnemyDead();
         }
         else if (_health == HealthStates.Injured)
         {

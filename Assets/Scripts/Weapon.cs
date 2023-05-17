@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Weapon : MonoBehaviour
 {
@@ -23,14 +24,23 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var col = other.gameObject;
-        Debug.Log(col.name);
         if (isEnemy)
         {
             if (col.CompareTag("Player"))
             {
-                
                 col.GetComponent<Player>().Hit(false);
             }
         }
+    }
+
+    public void EnemyDead()
+    {
+        isEnemy = false;
+        GetComponent<XRGrabInteractable>().enabled = true;
+        GetComponent<MeshCollider>().enabled = true;
+        transform.SetParent(null);
+        var rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.useGravity = true;
     }
 }

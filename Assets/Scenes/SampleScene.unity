@@ -13507,6 +13507,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 164c423e83072a6438e5e800705f376f, type: 3}
+--- !u!114 &1964383690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3803183298539745081, guid: 398af8801cf32624bbd32ac9f42da04e, type: 3}
+  m_PrefabInstance: {fileID: 7345242474376835922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab116d1f8c0c6458042e86d0ade93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1973968614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15645,6 +15656,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4582253400059792866, guid: 398af8801cf32624bbd32ac9f42da04e, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1964383690}
     - target: {fileID: 7345242475653161394, guid: 398af8801cf32624bbd32ac9f42da04e, type: 3}
       propertyPath: m_Name
       value: Enemy

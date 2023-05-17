@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    [SerializeField] private MeshCollider weapon;
     [SerializeField] private float attackRange;
     [SerializeField] private float cooldown;
 
@@ -27,5 +28,15 @@ public class EnemyAttack : MonoBehaviour
     public void TryAttackPlayer()
     {
         CanAttack = false;
+    }
+
+    public void WeaponEnable()
+    {
+        weapon.enabled = true;
+    }
+    
+    public void WeaponDisable()
+    {
+        weapon.enabled = false;
     }
 }

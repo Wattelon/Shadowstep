@@ -65,8 +65,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7345242475653161394}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 0.2, z: 0}
+  m_LocalRotation: {x: -0, y: 0.5556672, z: -0, w: 0.8314048}
+  m_LocalPosition: {x: -4.8992987, y: 0.20456219, z: 0.22162823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2052348e4a701e9459f9cfc007e450d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 5378965628784532015}
   attackRange: 3
   cooldown: 3
 --- !u!114 &7683530842694792701
@@ -222,7 +223,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 61f7c7f06d30c3f49b71407f213030c0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1383,6 +1384,10 @@ PrefabInstance:
       propertyPath: isEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7468545023550249920, guid: 8c77961a25dda684695ce881ff0ffbfc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7468545023550249921, guid: 8c77961a25dda684695ce881ff0ffbfc, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -1465,6 +1470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c77961a25dda684695ce881ff0ffbfc, type: 3}
+--- !u!64 &5378965628784532015 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 7468545023550249920, guid: 8c77961a25dda684695ce881ff0ffbfc, type: 3}
+  m_PrefabInstance: {fileID: 3242722150385549807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5380633052589618747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7470257773084800980, guid: 8c77961a25dda684695ce881ff0ffbfc, type: 3}
