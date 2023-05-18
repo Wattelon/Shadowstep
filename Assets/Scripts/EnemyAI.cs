@@ -1,5 +1,6 @@
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
@@ -24,6 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private Damage damage;
     [SerializeField] private Weapon weapon;
+    [SerializeField] private XRGrabInteractable bodyCore;
 
     private Player _player;
 
@@ -117,6 +119,8 @@ public class EnemyAI : MonoBehaviour
             aiPath.enabled = false;
             GetComponent<Animator>().enabled = false;
             weapon.EnemyDead();
+            bodyCore.enabled = true;
+            bodyCore.gameObject.layer = 3;
         }
         else if (_health == HealthStates.Injured)
         {

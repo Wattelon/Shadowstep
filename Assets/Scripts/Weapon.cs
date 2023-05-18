@@ -24,12 +24,9 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var col = other.gameObject;
-        if (isEnemy)
+        if (isEnemy && col.CompareTag("Player"))
         {
-            if (col.CompareTag("Player"))
-            {
-                col.GetComponent<Player>().Hit(false);
-            }
+            col.GetComponent<Player>().Hit(false);
         }
     }
 
