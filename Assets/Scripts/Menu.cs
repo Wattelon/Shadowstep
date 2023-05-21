@@ -1,10 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] private AudioMixer masterMixer;
+    [SerializeField] private RawImage preview;
+    [SerializeField] private TextMeshProUGUI levelName;
+    [SerializeField] private TextMeshProUGUI levelDescription;
+    [SerializeField] private GameObject start;
+    
+    private string _sceneName;
 
     public void OnQuitButtonClick()
     {
@@ -26,8 +34,17 @@ public class Menu : MonoBehaviour
         masterMixer.SetFloat("SoundVolume", value);
     }
 
-    public void OnLevelIconClick(string levelName)
+    public void OnLevelIconClick(LevelSO level)
     {
-        SceneManager.LoadScene(levelName);
+        preview.texture = level.Preview;
+        levelName.text = level.LevelName;
+        levelDescription.text = level.Description;
+        _sceneName = level.SceneName;
+        start.SetActive(true);
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(_sceneName);
     }
 }
