@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInput : MonoBehaviour
+public class HandsAnimationInput : MonoBehaviour
 {
-    private const string GRIP = "Grip";
-    private const string TRIGGER = "Trigger";
     [SerializeField] private Animator animator;
     [SerializeField] private InputActionProperty gripAction;
     [SerializeField] private InputActionProperty triggerAction;
+
+    private const string GRIP = "Grip";
+    private const string TRIGGER = "Trigger";
 
     private void Update()
     {

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 75ef0d4b1de37614488b333e03c01efe
+  - enabled: 1
     path: Assets/Scenes/Zersavim.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
