@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private PostProcessVolume postProcess;
+    [SerializeField] private PostProcessProfile injuryProfile;
+    [SerializeField] private LevelCompletion level;
     [SerializeField] private Damage damage;
     [SerializeField] private XRBaseController leftController;
     [SerializeField] private XRBaseController rightController;
@@ -18,14 +22,13 @@ public class Player : MonoBehaviour
         _health = damage.TakeDamage(isCritical);
         if (_health == HealthStates.Dead)
         {
-            Time.timeScale = 0f;
-            Debug.Log("You are dead");
             TriggerHaptic(hapticIntensityDeath, hapticDurationDeath);
+            level.FailLevel();
         }
         else if (_health == HealthStates.Injured)
         {
-            Debug.Log("You are injured");
             TriggerHaptic(hapticIntensityInjury, hapticDurationInjury);
+            postProcess.profile = injuryProfile;
         }
     }
 
