@@ -6,23 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89ae8734-36b9-4125-8302-e08b952d5866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectable.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Dagger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Dagger.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shadowstep.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shadowstep.lighting.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/LevelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/LevelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Zersavim.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Zersavim.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeadCutoff.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeadCutoff.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +145,7 @@
       <workItem from="1684760674243" duration="3175000" />
       <workItem from="1684828961895" duration="9429000" />
       <workItem from="1684848920285" duration="6920000" />
+      <workItem from="1684869515363" duration="4515000" />
     </task>
     <servers />
   </component>
