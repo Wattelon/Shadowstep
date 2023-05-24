@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="89ae8734-36b9-4125-8302-e08b952d5866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +151,7 @@
       <workItem from="1684828961895" duration="9429000" />
       <workItem from="1684848920285" duration="6920000" />
       <workItem from="1684869515363" duration="4515000" />
+      <workItem from="1684911283712" duration="2962000" />
     </task>
     <servers />
   </component>
