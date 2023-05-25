@@ -33,6 +33,7 @@ public class LevelCompletion : MonoBehaviour
         Time.timeScale = 0;
         postProcess.profile = winProfile;
         endMenu.WinLevel();
+        GameProgression.CompleteLevel(level.LevelID);
     }
 
     public void FailLevel()

@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 7039804949819633055}
   - component: {fileID: 7039804949819633054}
   - component: {fileID: 724456345}
+  - component: {fileID: 7073832072035648742}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -676,6 +677,20 @@ MonoBehaviour:
   postProcess: {fileID: 0}
   winProfile: {fileID: 11400000, guid: be946c3d32655f74d919949ed93cb450, type: 2}
   loseProfile: {fileID: 11400000, guid: fedfdaaeba3a99d40941de3df9409e56, type: 2}
+--- !u!114 &7073832072035648742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039804949819633046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3cedff4d7864141b97aec375a85dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipments:
+  - {fileID: 7886648042595871181}
 --- !u!1 &7039804949867776605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +2871,10 @@ PrefabInstance:
     - target: {fileID: 7962415620540146980, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}
       propertyPath: m_Name
       value: Belt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962415620540146980, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}

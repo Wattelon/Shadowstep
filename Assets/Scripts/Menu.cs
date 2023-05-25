@@ -16,7 +16,13 @@ public class Menu : MonoBehaviour
 
     public void OnQuitButtonClick()
     {
+        PlayerPrefs.Save();
         Application.Quit();
+    }
+
+    public void OnResetButtonClick()
+    {
+        PlayerPrefs.DeleteAll();
     }
     
     public void OnMasterValueChange(float value)
