@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Arrow : MonoBehaviour
 {
-    private InputAction launch = new("launch", binding: "<Keyboard>/l");
     private bool _inAir;
     private Rigidbody _rigidbody;
     private XRGrabInteractable _grabInteractable;
@@ -43,6 +40,17 @@ public class Arrow : MonoBehaviour
             _grabInteractable.interactionLayers = InteractionLayerMask.GetMask("Direct", "Arrow");
             transform.SetParent(other.transform);
             _inAir = false;
+            var col = other.gameObject;
+            if (col.CompareTag("NormalHit"))
+            {
+                var enemy = col.transform.GetComponentInParent(typeof(EnemyAI));
+                enemy.GetComponent<EnemyAI>().Hit(false);
+            }
+            else if (col.CompareTag("CriticalHit"))
+            {
+                var enemy = col.transform.GetComponentInParent(typeof(EnemyAI));
+                enemy.GetComponent<EnemyAI>().Hit(true);
+            }
         }
     }
 

@@ -8,7 +8,8 @@ public class Weapon : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (isEnemy) return;
-        var col = other.gameObject;
+        if (other.impulse.sqrMagnitude < 100) return;
+            var col = other.gameObject;
         if (col.CompareTag("NormalHit"))
         {
             var enemy = col.transform.GetComponentInParent(typeof(EnemyAI));

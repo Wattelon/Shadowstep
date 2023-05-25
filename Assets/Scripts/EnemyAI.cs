@@ -25,7 +25,8 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private Damage damage;
     [SerializeField] private Weapon weapon;
-    [SerializeField] private XRGrabInteractable bodyCore;
+    [SerializeField] private XRGrabInteractable[] limbsInteractables;
+    [SerializeField] private Collider[] colliders;
 
     private Player _player;
 
@@ -119,8 +120,14 @@ public class EnemyAI : MonoBehaviour
             aiPath.enabled = false;
             GetComponent<Animator>().enabled = false;
             weapon.EnemyDead();
-            bodyCore.enabled = true;
-            bodyCore.gameObject.layer = 3;
+            foreach (var limb in limbsInteractables)
+            {
+                limb.enabled = true;
+            }
+            foreach (var col in colliders)
+            {
+                col.gameObject.layer = 3;
+            }
         }
         else if (_health == HealthStates.Injured)
         {

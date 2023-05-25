@@ -76,7 +76,6 @@ public class BowPull : MonoBehaviour
         if (socketInteractor.interactablesSelected.Count != 0)
         {
             var arrow = socketInteractor.firstInteractableSelected;
-            var forceVector = arrow.transform.forward;
             arrow.transform.GetComponent<Arrow>().LaunchArrow(pullStrength * launchForce);
         }
     }
