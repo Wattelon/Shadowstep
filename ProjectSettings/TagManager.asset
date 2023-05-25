@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - CriticalHit
   - NormalHit
+  - Light
+  - Darkness
   layers:
   - Default
   - TransparentFX

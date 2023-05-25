@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (isEnemy) return;
-        if (other.impulse.sqrMagnitude < 100) return;
+        if (other.impulse.sqrMagnitude < 50) return;
             var col = other.gameObject;
         if (col.CompareTag("NormalHit"))
         {

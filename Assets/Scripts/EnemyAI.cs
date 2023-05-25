@@ -28,7 +28,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private XRGrabInteractable[] limbsInteractables;
     [SerializeField] private Collider[] colliders;
 
+    [SerializeField] private TargetFind targetFind;
+
     private Player _player;
+    private Stealth _playerVisibility;
 
     private EnemyStates _currentState;
     private HealthStates _health;
@@ -37,6 +40,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         _player = FindObjectOfType<Player>();
+        _playerVisibility = _player.GetComponent<Stealth>();
 
         _currentState = EnemyStates.Roaming;
 
@@ -51,21 +55,20 @@ public class EnemyAI : MonoBehaviour
                 enemyAnimator.IsWalking(true);
                 enemyAnimator.IsRunning(false);
                 aiPath.maxSpeed = 2;
-                roamTarget.transform.position = _roamPosition;
-                aiDestinationSetter.target = roamTarget.transform;
                 if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
                 {
                     _roamPosition = GenerateRoamPosition();
+                    roamTarget.transform.position = _roamPosition;
+                    aiDestinationSetter.target = roamTarget.transform;
                 }
                 TryFindPlayer();
-                
                 break;
             case EnemyStates.Following:
                 enemyAnimator.IsWalking(false);
                 enemyAnimator.IsRunning(true);
                 aiPath.maxSpeed = 5;
                 aiDestinationSetter.target = _player.transform;
-                var distance = Vector3.Distance(gameObject.transform.position, _player.transform.position);
+                var distance = Vector3.Distance(transform.position, _player.transform.position);
                 if (distance < enemyAttack.AttackRange)
                 {
                     enemyAnimator.IsRunning(false);
@@ -77,19 +80,27 @@ public class EnemyAI : MonoBehaviour
                 }
                 else if (distance >= stopTargetFollowingRange)
                 {
-                    _currentState = EnemyStates.Roaming;
-                    
+                    _currentState = EnemyStates.Seeking;
                 }
+                TryFindPlayer();
+                break;
+            case EnemyStates.Seeking:
+                var noiseSourceSpotted = targetFind.IsSpotted(roamTarget.transform, 2);
+                if (Vector3.Distance(transform.position, roamTarget.transform.position) <= reachedPointDistance && noiseSourceSpotted)
+                {
+                    _currentState = EnemyStates.Roaming;
+                    _roamPosition = GenerateRoamPosition();
+                    roamTarget.transform.position = _roamPosition;
+                    aiDestinationSetter.target = roamTarget.transform;
+                }
+                TryFindPlayer();
                 break;
         }
     }
 
     private void TryFindPlayer()
     {
-        if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= targetFollowRange)
-        {
-            _currentState = EnemyStates.Following;
-        }
+        _currentState = targetFind.IsSpotted(_player.transform, _playerVisibility.Visibility) ? EnemyStates.Following : EnemyStates.Roaming;
     }
     
     private Vector3 GenerateRoamPosition()
@@ -133,5 +144,11 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("Enemy injured");
         }
+    }
+
+    public void HearNoise(Vector3 noiseSource)
+    {
+        _currentState = EnemyStates.Seeking;
+        roamTarget.transform.position = noiseSource;
     }
 }
