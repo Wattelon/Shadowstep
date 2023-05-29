@@ -404,7 +404,7 @@ MonoBehaviour:
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
-  m_GravityApplicationMode: 0
+  m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 7039804949867776604}
   m_LeftHandMoveAction:
     m_UseReference: 1
@@ -572,6 +572,8 @@ GameObject:
   - component: {fileID: 7039804949819633054}
   - component: {fileID: 724456345}
   - component: {fileID: 7073832072035648742}
+  - component: {fileID: 414880453}
+  - component: {fileID: 414880454}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -691,6 +693,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipments:
   - {fileID: 7886648042595871181}
+--- !u!114 &414880453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039804949819633046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86e59e0717ad954c9197f7ae763ca72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7039804949648383456}
+  moveProvider: {fileID: 7039804949648383458}
+  footsteps: {fileID: 414880454}
+--- !u!114 &414880454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039804949819633046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed72e9a8635826f4db0740b151a82eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &7039804949867776605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,12 +2910,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}
+--- !u!1 &411767729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 284622113588830040, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}
+  m_PrefabInstance: {fileID: 284622113982500073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &372747086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411767729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4c6e0d7cb230c4f98eb8d12db19c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &411767732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 284622113588830045, guid: fc560bb00056f3742a76d6bfacc09263, type: 3}
   m_PrefabInstance: {fileID: 284622113982500073}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 411767729}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
@@ -3308,7 +3357,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   triggerAction:
     m_UseReference: 1
     m_Action:
@@ -3320,7 +3369,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &2445125810200747823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
@@ -3533,7 +3582,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   triggerAction:
     m_UseReference: 1
     m_Action:
@@ -3545,7 +3594,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &2020655306029992152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
@@ -3666,6 +3715,10 @@ PrefabInstance:
       propertyPath: progressTracker
       value: 
       objectReference: {fileID: 7039804949120117852}
+    - target: {fileID: 1082456723328246886, guid: f50432010af5b794a89beb278ad30007, type: 3}
+      propertyPath: showMenu.m_Reference
+      value: 
+      objectReference: {fileID: -8618745085062571748, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 1082456723328246887, guid: f50432010af5b794a89beb278ad30007, type: 3}
       propertyPath: m_Camera
       value: 

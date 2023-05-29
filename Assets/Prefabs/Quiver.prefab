@@ -1239,6 +1239,7 @@ GameObject:
   - component: {fileID: 8295528039666789663}
   - component: {fileID: 4949589416502796986}
   - component: {fileID: 7157501908255397488}
+  - component: {fileID: 8444455700727914107}
   m_Layer: 0
   m_Name: Quiver
   m_TagString: Untagged
@@ -1321,6 +1322,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8444455700727914107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670680941218363301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe965efbb73eff42aee4adf7f335161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9084646981693479912
 GameObject:
   m_ObjectHideFlags: 0
