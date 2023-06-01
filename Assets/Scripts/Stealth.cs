@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Stealth : MonoBehaviour
@@ -6,12 +7,13 @@ public class Stealth : MonoBehaviour
     [SerializeField] private CharacterController character;
     [SerializeField] private ActionBasedContinuousMoveProvider moveProvider;
     [SerializeField] private NoiseSource footsteps;
+    [SerializeField] private Slider visibilityTracker;
+    [SerializeField] private Slider hearabilityTracker;
     
     private float _characterHeight;
-    private float _visibility;
     private bool _isInNormalArea = true;
 
-    public float Visibility => _visibility;
+    public float Visibility { get; private set; }
 
     private void Update()
     {
@@ -19,7 +21,7 @@ public class Stealth : MonoBehaviour
         moveProvider.moveSpeed = _characterHeight * _characterHeight * 1.5f;
         if (_isInNormalArea)
         {
-            _visibility = _characterHeight;
+            Visibility = _characterHeight;
         }
 
         var hearability = character.velocity.sqrMagnitude / 3;
@@ -27,6 +29,9 @@ public class Stealth : MonoBehaviour
         {
             footsteps.GenerateNoise(hearability);
         }
+
+        visibilityTracker.value = Visibility;
+        hearabilityTracker.value = hearability;
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,12 +39,12 @@ public class Stealth : MonoBehaviour
         if (other.CompareTag("Light"))
         {
             _isInNormalArea = false;
-            _visibility = Mathf.Clamp(_characterHeight * 2, 0, 2);
+            Visibility = Mathf.Clamp(_characterHeight * 2, 0, 2);
         }
         else if (other.CompareTag("Darkness"))
         {
             _isInNormalArea = false;
-            _visibility = _characterHeight * 0.5f;
+            Visibility = _characterHeight * 0.5f;
         }
     }
 

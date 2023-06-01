@@ -10,8 +10,10 @@ public class Menu : MonoBehaviour
     [SerializeField] private RawImage preview;
     [SerializeField] private TextMeshProUGUI levelName;
     [SerializeField] private TextMeshProUGUI levelDescription;
+    [SerializeField] private TextMeshProUGUI levelGoal;
     [SerializeField] private GameObject start;
-    
+    [SerializeField] private TurnSetting turnSetting;
+
     private string _sceneName;
 
     public void OnQuitButtonClick()
@@ -45,6 +47,7 @@ public class Menu : MonoBehaviour
         preview.texture = level.Preview;
         levelName.text = level.LevelName;
         levelDescription.text = level.Description;
+        levelGoal.text = $"Цель - {level.Goal}";
         _sceneName = level.SceneName;
         start.SetActive(true);
     }
@@ -52,5 +55,11 @@ public class Menu : MonoBehaviour
     public void LoadLevel()
     {
         SceneManager.LoadScene(_sceneName);
+    }
+
+    public void TurnSetting(bool setting)
+    {
+        Progression.SaveSetting(setting);
+        turnSetting.UpdateSetting();
     }
 }

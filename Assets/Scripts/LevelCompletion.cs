@@ -11,18 +11,18 @@ public class LevelCompletion : MonoBehaviour
     [SerializeField] private PostProcessProfile loseProfile;
 
     private int _progress;
-    private int _goal;
+    private int _gold;
 
     private void Start()
     {
-        _goal = level.Goal;
+        _gold = level.Gold;
     }
 
     public void GainCollectable(int price)
     {
         _progress += price;
-        gameMenu.TrackProgress(_progress, _goal);
-        if (_progress >= _goal)
+        gameMenu.TrackProgress(_progress, _gold);
+        if (_progress >= _gold)
         {
             CompleteLevel();
         }
@@ -33,7 +33,7 @@ public class LevelCompletion : MonoBehaviour
         Time.timeScale = 0;
         postProcess.profile = winProfile;
         endMenu.WinLevel();
-        GameProgression.CompleteLevel(level.LevelID);
+        Progression.CompleteLevel(level.LevelID);
     }
 
     public void FailLevel()

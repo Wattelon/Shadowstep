@@ -15,7 +15,7 @@ public class EquipmentPickup : MonoBehaviour
 
     public void OnPickupGrab()
     {
-        GameProgression.SaveEquipment(equipmentID);
+        Progression.SaveEquipment(equipmentID);
         equipmentLoad.ObtainEquipment(equipmentID);
         Destroy(gameObject);
     }

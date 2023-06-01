@@ -11,8 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float reachedPointDistance;
 
     [SerializeField] private GameObject roamTarget;
-
-    [SerializeField] private float targetFollowRange;
+    
     [SerializeField] private float stopTargetFollowingRange;
 
     [SerializeField] private EnemyAttack enemyAttack;

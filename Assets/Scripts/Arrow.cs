@@ -7,11 +7,13 @@ public class Arrow : MonoBehaviour
     private bool _inAir;
     private Rigidbody _rigidbody;
     private XRGrabInteractable _grabInteractable;
+    private TrailRenderer _trailRenderer;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _grabInteractable = GetComponent<XRGrabInteractable>();
+        _trailRenderer = GetComponent<TrailRenderer>();
     }
 
     public void LaunchArrow(float force)
@@ -19,6 +21,7 @@ public class Arrow : MonoBehaviour
         _grabInteractable.interactionLayers = 0;
         _rigidbody.AddForce(transform.up * force);
         _inAir = true;
+        _trailRenderer.enabled = true;
         StartCoroutine(RotateInAir());
     }
 
@@ -37,7 +40,8 @@ public class Arrow : MonoBehaviour
         {
             _rigidbody.isKinematic = true;
             _rigidbody.useGravity = false;
-            _grabInteractable.interactionLayers = InteractionLayerMask.GetMask("Direct", "Arrow");
+            _grabInteractable.interactionLayers = InteractionLayerMask.GetMask("Direct", "Ray", "Arrow");
+            _trailRenderer.enabled = false;
             transform.SetParent(other.transform);
             _inAir = false;
             var col = other.gameObject;

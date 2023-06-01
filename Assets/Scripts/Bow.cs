@@ -1,9 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Bow : MonoBehaviour
 {
+    [SerializeField] private Transform socket;
+    
     private BoxCollider _collider;
     private XRGrabInteractable _grabInteractable;
     
@@ -16,5 +17,10 @@ public class Bow : MonoBehaviour
     void Update()
     {
         _collider.isTrigger = _grabInteractable.interactorsSelecting.Count != 0;
+    }
+
+    public void ResetSocketPosition()
+    {
+        socket.localPosition = Vector3.zero;
     }
 }
