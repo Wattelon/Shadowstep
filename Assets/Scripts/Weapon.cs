@@ -1,12 +1,23 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private bool isEnemy;
-    
+
+    private XRGrabInteractable _grabInteractable;
+
+    private void Awake()
+    {
+        _grabInteractable = GetComponent<XRGrabInteractable>();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
+        //_grabInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
+        //StartCoroutine(ReselectWeapon());
         if (isEnemy) return;
         if (other.impulse.sqrMagnitude < 50) return;
             var col = other.gameObject;
@@ -20,6 +31,12 @@ public class Weapon : MonoBehaviour
             var enemy = col.transform.GetComponentInParent(typeof(EnemyAI));
             enemy.GetComponent<EnemyAI>().Hit(true);
         }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        //_grabInteractable.movementType = XRBaseInteractable.MovementType.Instantaneous;
+        //StartCoroutine(ReselectWeapon());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,5 +57,14 @@ public class Weapon : MonoBehaviour
         var rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.useGravity = true;
+    }
+
+    IEnumerator ReselectWeapon()
+    {
+        _grabInteractable.enabled = false;
+        //_grabInteractable.firstInteractorSelecting.transform.GetComponent<XRDirectInteractor>().enabled = false;
+        yield return new WaitForFixedUpdate();
+        _grabInteractable.enabled = true;
+        //_grabInteractable.firstInteractorSelecting.transform.GetComponent<XRDirectInteractor>().enabled = true;
     }
 }

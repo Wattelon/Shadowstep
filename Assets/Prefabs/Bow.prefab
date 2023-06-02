@@ -207,7 +207,7 @@ MonoBehaviour:
   midPoint: {fileID: 7102302632335139678}
   socket: {fileID: 7148415466703780727}
   pullLimit: 0.5
-  launchForce: 1000
+  launchForce: 500
 --- !u!1 &2086121307
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d230d36199e75f4c81f1c71fa13ed29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socket: {fileID: 7148415466703780727}
 --- !u!1 &1942644498808209723
 GameObject:
   m_ObjectHideFlags: 0
