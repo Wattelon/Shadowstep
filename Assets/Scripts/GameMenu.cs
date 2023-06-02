@@ -33,4 +33,9 @@ public class GameMenu : MonoBehaviour
     {
         progressTracker.text = $"Собрано {progress} / {goal}";
     }
+
+    public void ShowGoal(string goal)
+    {
+        progressTracker.text = goal;
+    }
 }

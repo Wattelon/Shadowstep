@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  hitThreshold: 40
 --- !u!114 &4812742762994790769
 MonoBehaviour:
   m_ObjectHideFlags: 0

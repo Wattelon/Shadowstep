@@ -16,6 +16,7 @@ public class LevelCompletion : MonoBehaviour
     private void Start()
     {
         _gold = level.Gold;
+        gameMenu.ShowGoal(level.Goal);
     }
 
     public void GainCollectable(int price)

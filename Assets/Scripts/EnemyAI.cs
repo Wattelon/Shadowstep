@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
 
         _currentState = EnemyStates.Roaming;
 
-        _roamPosition = GenerateRoamPosition();
+        SetRoamTarget();
     }
 
     private void Update()
@@ -54,11 +54,11 @@ public class EnemyAI : MonoBehaviour
                 enemyAnimator.IsWalking(true);
                 enemyAnimator.IsRunning(false);
                 aiPath.maxSpeed = 2;
-                if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
+                var distanceroam = Vector3.Distance(gameObject.transform.position, _roamPosition);
+                Debug.Log(distanceroam);
+                if (distanceroam <= reachedPointDistance)
                 {
-                    _roamPosition = GenerateRoamPosition();
-                    roamTarget.transform.position = _roamPosition;
-                    aiDestinationSetter.target = roamTarget.transform;
+                    SetRoamTarget();
                 }
                 TryFindPlayer();
                 break;
@@ -88,9 +88,7 @@ public class EnemyAI : MonoBehaviour
                 if (Vector3.Distance(transform.position, roamTarget.transform.position) <= reachedPointDistance && noiseSourceSpotted)
                 {
                     _currentState = EnemyStates.Roaming;
-                    _roamPosition = GenerateRoamPosition();
-                    roamTarget.transform.position = _roamPosition;
-                    aiDestinationSetter.target = roamTarget.transform;
+                    SetRoamTarget();
                 }
                 TryFindPlayer();
                 break;
@@ -119,6 +117,13 @@ public class EnemyAI : MonoBehaviour
     {
         var newDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), Random.Range(-1f, 1f));
         return newDirection.normalized;
+    }
+
+    private void SetRoamTarget()
+    {
+        _roamPosition = GenerateRoamPosition();
+        roamTarget.transform.position = _roamPosition;
+        aiDestinationSetter.target = roamTarget.transform;
     }
     
     public void Hit(bool isCritical)

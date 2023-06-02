@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 75ef0d4b1de37614488b333e03c01efe
   - enabled: 1
+    path: Assets/Scenes/FoxGrove.unity
+    guid: f14cf16743deafd49843a65ef5215241
+  - enabled: 1
     path: Assets/Scenes/Zersavim.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Aquertis.unity
+    guid: 1066735678f74fd48b0854bf9fc1ee85
+  - enabled: 0
+    path: Assets/Scenes/Selune.unity
+    guid: 0a26e7342abceea48b961f404601316d
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cf1c9c2d7d1e7c5468d770c93e7b0025, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e24a975c9e03d6147857b07725bcdc39, type: 2}

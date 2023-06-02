@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private bool isEnemy;
+    [SerializeField] private float hitThreshold;
 
     private XRGrabInteractable _grabInteractable;
 
@@ -16,10 +17,8 @@ public class Weapon : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        //_grabInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
-        //StartCoroutine(ReselectWeapon());
         if (isEnemy) return;
-        if (other.impulse.sqrMagnitude < 50) return;
+        if (other.impulse.sqrMagnitude < hitThreshold) return;
             var col = other.gameObject;
         if (col.CompareTag("NormalHit"))
         {
@@ -31,12 +30,6 @@ public class Weapon : MonoBehaviour
             var enemy = col.transform.GetComponentInParent(typeof(EnemyAI));
             enemy.GetComponent<EnemyAI>().Hit(true);
         }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        //_grabInteractable.movementType = XRBaseInteractable.MovementType.Instantaneous;
-        //StartCoroutine(ReselectWeapon());
     }
 
     private void OnTriggerEnter(Collider other)
