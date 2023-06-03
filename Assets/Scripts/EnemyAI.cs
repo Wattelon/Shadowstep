@@ -7,34 +7,33 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float minWalkableDistance;
     [SerializeField] private float maxWalkableDistance;
-
     [SerializeField] private float reachedPointDistance;
-
-    [SerializeField] private GameObject roamTarget;
-    
     [SerializeField] private float stopTargetFollowingRange;
-
-    [SerializeField] private EnemyAttack enemyAttack;
-
-    [SerializeField] private AIDestinationSetter aiDestinationSetter;
-
-    [SerializeField] private EnemyAnimator enemyAnimator;
-
-    [SerializeField] private AIPath aiPath;
-
-    [SerializeField] private Damage damage;
+    
     [SerializeField] private Weapon weapon;
     [SerializeField] private XRGrabInteractable[] limbsInteractables;
     [SerializeField] private Collider[] colliders;
 
-    [SerializeField] private TargetFind targetFind;
-
     private Player _player;
     private Stealth _playerVisibility;
-
+    private RichAI _richAI;
+    private TargetFind _targetFind;
+    private EnemyAnimator _enemyAnimator;
+    private EnemyAttack _enemyAttack;
+    private Damage _damage;
+    
     private EnemyStates _currentState;
     private HealthStates _health;
     private Vector3 _roamPosition;
+
+    private void Awake()
+    {
+        _richAI = GetComponent<RichAI>();
+        _targetFind = GetComponent<TargetFind>();
+        _enemyAnimator = GetComponent<EnemyAnimator>();
+        _enemyAttack = GetComponent<EnemyAttack>();
+        _damage = GetComponent<Damage>();
+    }
 
     private void Start()
     {
@@ -51,30 +50,28 @@ public class EnemyAI : MonoBehaviour
         switch (_currentState)
         {
             case EnemyStates.Roaming:
-                enemyAnimator.IsWalking(true);
-                enemyAnimator.IsRunning(false);
-                aiPath.maxSpeed = 2;
-                var distanceroam = Vector3.Distance(gameObject.transform.position, _roamPosition);
-                Debug.Log(distanceroam);
-                if (distanceroam <= reachedPointDistance)
+                _enemyAnimator.IsWalking(true);
+                _enemyAnimator.IsRunning(false);
+                _richAI.maxSpeed = 2;
+                if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
                 {
                     SetRoamTarget();
                 }
                 TryFindPlayer();
                 break;
             case EnemyStates.Following:
-                enemyAnimator.IsWalking(false);
-                enemyAnimator.IsRunning(true);
-                aiPath.maxSpeed = 5;
-                aiDestinationSetter.target = _player.transform;
+                _enemyAnimator.IsWalking(false);
+                _enemyAnimator.IsRunning(true);
+                _richAI.maxSpeed = 5;
+                _richAI.destination = _player.transform.position;
                 var distance = Vector3.Distance(transform.position, _player.transform.position);
-                if (distance < enemyAttack.AttackRange)
+                if (distance < _enemyAttack.AttackRange)
                 {
-                    enemyAnimator.IsRunning(false);
-                    if (enemyAttack.CanAttack)
+                    _enemyAnimator.IsRunning(false);
+                    if (_enemyAttack.CanAttack)
                     {
-                        enemyAttack.TryAttackPlayer();
-                        enemyAnimator.PlayAttack();
+                        _enemyAttack.TryAttackPlayer();
+                        _enemyAnimator.PlayAttack();
                     }
                 }
                 else if (distance >= stopTargetFollowingRange)
@@ -84,8 +81,8 @@ public class EnemyAI : MonoBehaviour
                 TryFindPlayer();
                 break;
             case EnemyStates.Seeking:
-                var noiseSourceSpotted = targetFind.IsSpotted(roamTarget.transform, 2);
-                if (Vector3.Distance(transform.position, roamTarget.transform.position) <= reachedPointDistance && noiseSourceSpotted)
+                var noiseSourceSpotted = _targetFind.IsSpotted(_richAI.destination, 2);
+                if (Vector3.Distance(transform.position, _richAI.destination) <= reachedPointDistance && noiseSourceSpotted)
                 {
                     _currentState = EnemyStates.Roaming;
                     SetRoamTarget();
@@ -97,7 +94,7 @@ public class EnemyAI : MonoBehaviour
 
     private void TryFindPlayer()
     {
-        _currentState = targetFind.IsSpotted(_player.transform, _playerVisibility.Visibility) ? EnemyStates.Following : EnemyStates.Roaming;
+        _currentState = _targetFind.IsSpotted(_player.transform.position, _playerVisibility.Visibility) ? EnemyStates.Following : EnemyStates.Roaming;
     }
     
     private Vector3 GenerateRoamPosition()
@@ -115,24 +112,22 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 GenerateRandomDirection()
     {
-        var newDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), Random.Range(-1f, 1f));
+        var newDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         return newDirection.normalized;
     }
 
     private void SetRoamTarget()
     {
         _roamPosition = GenerateRoamPosition();
-        roamTarget.transform.position = _roamPosition;
-        aiDestinationSetter.target = roamTarget.transform;
+        _richAI.destination = _roamPosition;
     }
     
     public void Hit(bool isCritical)
     {
-        _health = damage.TakeDamage(isCritical);
+        _health = _damage.TakeDamage(isCritical);
         if (_health == HealthStates.Dead)
         {
-            Debug.Log("Enemy dead");
-            aiPath.enabled = false;
+            _richAI.enabled = false;
             GetComponent<Animator>().enabled = false;
             weapon.EnemyDead();
             foreach (var limb in limbsInteractables)
@@ -146,13 +141,14 @@ public class EnemyAI : MonoBehaviour
         }
         else if (_health == HealthStates.Injured)
         {
-            Debug.Log("Enemy injured");
+            _currentState = EnemyStates.Seeking;
+            _richAI.destination = _player.transform.position;
         }
     }
 
     public void HearNoise(Vector3 noiseSource)
     {
         _currentState = EnemyStates.Seeking;
-        roamTarget.transform.position = noiseSource;
+        _richAI.destination = noiseSource;
     }
 }

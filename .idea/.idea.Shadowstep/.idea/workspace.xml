@@ -6,22 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="89ae8734-36b9-4125-8302-e08b952d5866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shadowstep/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Easters/source/skeleton.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Normal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PostProcessing/Normal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectable.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Dagger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Dagger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shield.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shield.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR Origin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR Origin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FoxGrove.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FoxGrove.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shadowstep.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shadowstep.lighting" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Zersavim.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Aquertis.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Aquertis.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/FoxGrove.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/FoxGrove.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Selune.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Selune.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Zersavim.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Zersavim.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabInteractableParent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabInteractableParent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetFind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TargetFind.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +72,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\kb4mi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\kb4mi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\kb4mi\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\WattelonUser\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\WattelonUser\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\WattelonUser\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -174,6 +174,7 @@
       <workItem from="1685606720077" duration="4300000" />
       <workItem from="1685638812889" duration="7264000" />
       <workItem from="1685705556565" duration="7814000" />
+      <workItem from="1685739266429" duration="8851000" />
     </task>
     <servers />
   </component>
@@ -191,14 +192,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Menu.cs</url>
           <line>35</line>
-          <properties documentPath="C:\Users\kb4mi\Shadowstep\Assets\Scripts\Menu.cs" initialLine="35" containingFunctionPresentation="Method 'OnMusicValueChange'">
-            <startOffsets>
-              <option value="919" />
-            </startOffsets>
-            <endOffsets>
-              <option value="920" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\kb4mi\Shadowstep\Assets\Scripts\Menu.cs" initialLine="35" containingFunctionPresentation="Method 'OnMusicValueChange'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4117120724715714490
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 165807456396670486}
-  m_Layer: 0
-  m_Name: RoamTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &165807456396670486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4117120724715714490}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7345242475653161395}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7345242475653161394
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,17 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7345242475653161395}
   - component: {fileID: 770473350774808798}
-  - component: {fileID: 5810237851997266599}
-  - component: {fileID: 1180775852720539145}
   - component: {fileID: 4582253400059792866}
   - component: {fileID: 686332662231979848}
   - component: {fileID: 7683530842694792701}
   - component: {fileID: 8103494586662349031}
   - component: {fileID: 7345242474376835954}
-  - component: {fileID: 7345242474376835942}
-  - component: {fileID: 7345242474376835943}
   - component: {fileID: 7345242474376835955}
   - component: {fileID: -5073059563023129203}
+  - component: {fileID: 443506122}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -66,16 +32,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7345242475653161394}
-  m_LocalRotation: {x: -0, y: 0.5556672, z: -0, w: 0.8314048}
+  m_LocalRotation: {x: 0, y: 0.5556645, z: 0, w: 0.83140665}
   m_LocalPosition: {x: -4.8992987, y: 0.20456219, z: 0.22162823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 666097294608742544}
-  - {fileID: 165807456396670486}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 67.513, z: 0}
 --- !u!114 &770473350774808798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,62 +69,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &5810237851997266599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7345242475653161394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
-  radius: 0.5
-  height: 2
-  canMove: 1
-  maxSpeed: 1
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 0
-  enableRotation: 1
-  autoRepath:
-    mode: 2
-    interval: 0.2
-    sensitivity: 10
-    maximumInterval: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 0.5
-  endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
---- !u!114 &1180775852720539145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7345242475653161394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
 --- !u!114 &4582253400059792866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,13 +84,10 @@ MonoBehaviour:
   minWalkableDistance: 5
   maxWalkableDistance: 25
   reachedPointDistance: 3
-  roamTarget: {fileID: 4117120724715714490}
-  targetFollowRange: 10
   stopTargetFollowingRange: 20
-  enemyAttack: {fileID: 686332662231979848}
-  aiDestinationSetter: {fileID: 1180775852720539145}
+  targetFind: {fileID: -5073059563023129203}
   enemyAnimator: {fileID: 7683530842694792701}
-  aiPath: {fileID: 5810237851997266599}
+  enemyAttack: {fileID: 686332662231979848}
   damage: {fileID: 7345242474376835955}
   weapon: {fileID: 3803183298539745081}
   limbsInteractables:
@@ -201,7 +107,6 @@ MonoBehaviour:
   - {fileID: 1947895976951251755}
   - {fileID: 4432160717439168589}
   - {fileID: 8277801456827187827}
-  targetFind: {fileID: -5073059563023129203}
 --- !u!114 &686332662231979848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,43 +174,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7345242474376835942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7345242475653161394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  smoothType: 0
-  subdivisions: 2
-  iterations: 1
-  strength: 0.5
-  uniformLength: 1
-  maxSegmentLength: 0.5
-  bezierTangentLength: 0.4
-  offset: 0.2
-  factor: 0.1
---- !u!114 &7345242474376835943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7345242475653161394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  unwrap: 1
-  splitAtEveryPortal: 0
 --- !u!114 &7345242474376835955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +200,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionRange: 10
-  fieldOfView: 90
+  fieldOfView: 120
   obstacles:
     serializedVersion: 2
     m_Bits: 384
+--- !u!114 &443506122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345242475653161394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce11ea984e202491d9271f53021d8b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+  radius: 0.5
+  height: 2
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: NaN, y: NaN, z: NaN}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  repathRateCompatibility: NaN
+  canSearchCompability: 0
+  orientation: 0
+  enableRotation: 1
+  autoRepath:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 0
+  targetCompatibility: {fileID: 0}
+  acceleration: 5
+  rotationSpeed: 180
+  slowdownTime: 0.5
+  endReachedDistance: 0.01
+  wallForce: 3
+  wallDist: 1
+  funnelSimplification: 1
+  slowWhenNotFacingTarget: 1
+  animCompatibility: {fileID: 0}
 --- !u!1 &8552590159110943966
 GameObject:
   m_ObjectHideFlags: 0

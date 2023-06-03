@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 1942644499934977827}
   - component: {fileID: 1942644499934977826}
   - component: {fileID: 121814021}
+  - component: {fileID: 2874425551025695577}
   m_Layer: 3
   m_Name: Bow
   m_TagString: Untagged
@@ -366,6 +367,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 121814021}
+        m_TargetAssemblyTypeName: Bow, Assembly-CSharp
+        m_MethodName: ResetSocketPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2874425551025695577}
+        m_TargetAssemblyTypeName: GrabInteractableParent, Assembly-CSharp
+        m_MethodName: SetToInteractor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -374,6 +399,18 @@ MonoBehaviour:
           Unity.XR.Interaction.Toolkit
         m_MethodName: set_socketActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2874425551025695577}
+        m_TargetAssemblyTypeName: GrabInteractableParent, Assembly-CSharp
+        m_MethodName: SetToWorld
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -423,7 +460,7 @@ MonoBehaviour:
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -474,6 +511,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socket: {fileID: 7148415466703780727}
+--- !u!114 &2874425551025695577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942090588030575824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db791f6de4c41a94aaff1296470069c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1942644498808209723
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +640,7 @@ MonoBehaviour:
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 0}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
-  m_SocketActive: 1
+  m_SocketActive: 0
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
 --- !u!135 &8148912762346774889

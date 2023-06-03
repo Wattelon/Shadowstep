@@ -2,7 +2,8 @@ public enum EnemyStates
 {
     Roaming,
     Following,
-    Seeking
+    Seeking,
+    Patrolling
 }
 
 public enum HealthStates

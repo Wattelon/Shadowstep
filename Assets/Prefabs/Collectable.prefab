@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4821040116489016781}
   - component: {fileID: 4821040116489016782}
   - component: {fileID: 4702526705181811464}
+  - component: {fileID: 3877168770199141729}
   m_Layer: 3
   m_Name: Collectable
   m_TagString: Untagged
@@ -182,10 +183,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3877168770199141729}
+        m_TargetAssemblyTypeName: GrabInteractableParent, Assembly-CSharp
+        m_MethodName: SetToInteractor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3877168770199141729}
+        m_TargetAssemblyTypeName: GrabInteractableParent, Assembly-CSharp
+        m_MethodName: SetToWorld
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -233,7 +258,7 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 1
+  m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -278,6 +303,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 5
+--- !u!114 &3877168770199141729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819309384707195498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db791f6de4c41a94aaff1296470069c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7202433193030421382
 GameObject:
   m_ObjectHideFlags: 0
