@@ -8,11 +8,21 @@ public class EndMenu : MonoBehaviour
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private AudioClip audioWin;
+    [SerializeField] private AudioClip audioLose;
+
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     public void WinLevel()
     {
         canvas.enabled = true;
         winScreen.SetActive(true);
+        _audioSource.PlayOneShot(audioWin);
         timer.text = $"На прохождение ушло {(int)Time.timeSinceLevelLoad} с";
     }
 
@@ -20,6 +30,7 @@ public class EndMenu : MonoBehaviour
     {
         canvas.enabled = true;
         loseScreen.SetActive(true);
+        _audioSource.PlayOneShot(audioLose);
     }
 
     public void OnMainMenuButtonClick()

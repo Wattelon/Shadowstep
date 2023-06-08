@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -7,13 +5,6 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private bool isEnemy;
     [SerializeField] private float hitThreshold;
-
-    private XRGrabInteractable _grabInteractable;
-
-    private void Awake()
-    {
-        _grabInteractable = GetComponent<XRGrabInteractable>();
-    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -50,14 +41,5 @@ public class Weapon : MonoBehaviour
         var rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.useGravity = true;
-    }
-
-    IEnumerator ReselectWeapon()
-    {
-        _grabInteractable.enabled = false;
-        //_grabInteractable.firstInteractorSelecting.transform.GetComponent<XRDirectInteractor>().enabled = false;
-        yield return new WaitForFixedUpdate();
-        _grabInteractable.enabled = true;
-        //_grabInteractable.firstInteractorSelecting.transform.GetComponent<XRDirectInteractor>().enabled = true;
     }
 }

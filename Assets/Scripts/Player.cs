@@ -32,9 +32,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void TriggerHaptic(float intensity, float duration)
+    public void TriggerHaptic(float intensity, float duration)
     {
-        if (intensity > 0)
+        if (intensity > 0 && duration > 0)
         {
             leftController.SendHapticImpulse(intensity, duration);
             rightController.SendHapticImpulse(intensity, duration);

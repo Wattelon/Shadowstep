@@ -124,6 +124,7 @@ public class EnemyAI : MonoBehaviour
     
     public void Hit(bool isCritical)
     {
+        _player.TriggerHaptic(0.1f, 0.1f);
         _health = _damage.TakeDamage(isCritical);
         if (_health == HealthStates.Dead)
         {

@@ -22,6 +22,6 @@ public class Bow : MonoBehaviour
     public void ResetSocketPosition()
     {
         socket.localPosition = Vector3.zero;
-        socket.rotation = Quaternion.identity;
+        socket.localRotation = Quaternion.identity;
     }
 }
