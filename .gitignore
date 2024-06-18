@@ -12,8 +12,8 @@
 /[Tt]rash
 /Logs/
 
-ImportedAssets/
-ImportedAssets.meta
+#ImportedAssets/
+#ImportedAssets.meta
 
 #new
 */Library/
